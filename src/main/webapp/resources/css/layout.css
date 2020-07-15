@@ -1,0 +1,477 @@
+@charset "UTF-8";
+/*
+---------------------------------------------------------------
+*
+* base
+*
+---------------------------------------------------------------
+*/
+/* css reset */
+@import url("https://fonts.googleapis.com/css2?family=Shadows+Into+Light+Two&display=swap");
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
+blockquote, pre, a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub,
+sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section,
+summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body, div, h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, p, form, fieldset, input, button, table, tr, th, td {
+  margin: 0;
+  padding: 0;
+  line-height: 1.5em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%;
+  font-weight: normal;
+}
+
+th, b, strong {
+  font-weight: normal;
+}
+
+fieldset, img {
+  border: none;
+  vertical-align: top;
+}
+
+address {
+  font-style: normal;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+a:hover, a:active, a:focus {
+  text-decoration: none;
+}
+
+legend {
+  display: none;
+}
+
+button, input[type=submit] {
+  border: 1px solid #ddd;
+  cursor: pointer;
+}
+
+/*
+---------------------------------------------------------------
+*
+* common
+*
+---------------------------------------------------------------
+*/
+@font-face {
+  font-family: "noto-sans-scott-t";
+  src: url("../fonts/NotoSansCJKkr-Thin.woff2") format("woff2"), url("../fonts/NotoSansCJKkr-Thin.woff") format("woff"), url("../fonts/NotoSansCJKkr-Thin.otf") format("truetype");
+}
+
+@font-face {
+  font-family: "noto-sans-scott-l";
+  src: url("../fonts/NotoSansCJKkr-Light.woff2") format("woff2"), url("../fonts/NotoSansCJKkr-Light.woff") format("woff"), url("../fonts/NotoSansCJKkr-Light.otf") format("truetype");
+}
+
+@font-face {
+  font-family: "noto-sans-scott-dl";
+  src: url("../fonts/NotoSansCJKkr-DemiLight.woff2") format("woff2"), url("../fonts/NotoSansCJKkr-DemiLight.woff") format("woff"), url("../fonts/NotoSansCJKkr-DemiLight.otf") format("truetype");
+}
+
+@font-face {
+  font-family: "noto-sans-scott-r";
+  src: url("../fonts/NotoSansCJKkr-Regular.woff2") format("woff2"), url("../fonts/NotoSansCJKkr-Regular.woff") format("woff"), url("../fonts/NotoSansCJKkr-Regular.otf") format("truetype");
+}
+
+@font-face {
+  font-family: "noto-sans-scott-m";
+  src: url("../fonts/NotoSansCJKkr-Medium.woff2") format("woff2"), url("../fonts/NotoSansCJKkr-Medium.woff") format("woff"), url("../fonts/NotoSansCJKkr-Medium.otf") format("truetype");
+}
+
+@font-face {
+  font-family: "noto-sans-scott-b";
+  src: url("../fonts/NotoSansCJKkr-Bold.woff2") format("woff2"), url("../fonts/NotoSansCJKkr-Bold.woff") format("woff"), url("../fonts/NotoSansCJKkr-Bold.otf") format("truetype");
+}
+
+@font-face {
+  font-family: "noto-sans-scott-bk";
+  src: url("../fonts/NotoSansCJKkr-Black.woff2") format("woff2"), url("../fonts/NotoSansCJKkr-Black.woff") format("woff"), url("../fonts/NotoSansCJKkr-Black.otf") format("truetype");
+}
+
+@font-face {
+  font-family: "GothamM";
+  src: url("../fonts/GothamMedium.woff2") format("woff2"), url("../fonts/GothamMedium.woff") format("woff"), url("../fonts/GothamMedium.otf") format("truetype");
+}
+
+@font-face {
+  font-family: "GothamB";
+  src: url("../fonts/GothamBold.woff2") format("woff2"), url("../fonts/GothamBold.woff") format("woff"), url("../fonts/GothamBold.otf") format("truetype");
+}
+
+body {
+  background: #fff;
+  font-family: "noto-sans-scott-dl";
+  color: #222;
+}
+
+a {
+  color: #222;
+}
+
+th, b, strong {
+  font-family: "noto-sans-scott-m";
+}
+
+button, input, select {
+  font-family: "noto-sans-scott-dl";
+  font-size: 15px;
+  border: 1px solid #666;
+  background: none;
+}
+
+::-moz-selection {
+  background: #1edeb9;
+  color: #fff;
+}
+
+::selection {
+  background: #1edeb9;
+  color: #fff;
+}
+
+::-moz-selection {
+  background: #1edeb9;
+  color: #fff;
+}
+
+::-webkit-input-placeholder {
+  font-size: 15px;
+  color: #bbb;
+}
+
+::-moz-placeholder {
+  font-size: 15px;
+  color: #bbb;
+}
+
+:-ms-input-placeholder {
+  font-size: 15px;
+  color: #bbb;
+}
+
+.snd_only {
+  position: absolute !important;
+  top: -9999px;
+  left: -9999px;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+/* swiper */
+.swiper-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transition-property: -webkit-transform;
+  transition-property: -webkit-transform;
+  transition-property: transform;
+  transition-property: transform, -webkit-transform;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+.swiper-slide {
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  -webkit-transition-property: -webkit-transform;
+  transition-property: -webkit-transform;
+  transition-property: transform;
+  transition-property: transform, -webkit-transform;
+}
+
+.swiper-button-next.swiper-button-disabled, .swiper-button-prev.swiper-button-disabled {
+  opacity: .3;
+  cursor: auto;
+  pointer-events: none;
+}
+
+/* swiper */
+@media (max-width: 360px) {
+  html {
+    font-size: 13px;
+  }
+}
+
+@media (min-width: 361px) and (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 769px) {
+  html {
+    font-size: 15px;
+  }
+}
+
+@media (min-width: 1201px) {
+  .container {
+    width: 1200px;
+    padding: 0;
+  }
+}
+
+/*
+---------------------------------------------------------------
+*
+* layout
+*
+---------------------------------------------------------------
+*/
+.container {
+  margin: 0 auto;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+#wrap {
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding-left: 50px;
+}
+
+footer p {
+  position: relative;
+  display: table;
+  margin: 0 auto;
+  height: 30px;
+  line-height: 30px;
+  font-size: 13px;
+}
+
+footer p:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: #555;
+  -webkit-transform: scaleX(1.8);
+          transform: scaleX(1.8);
+  -webkit-transition: -webkit-transform .3s linear;
+  transition: -webkit-transform .3s linear;
+  transition: transform .3s linear;
+  transition: transform .3s linear, -webkit-transform .3s linear;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 50px;
+  height: 100vh;
+  background: #555;
+}
+
+#gnb li {
+  position: relative;
+  margin: 7px;
+}
+
+#gnb a {
+  display: table;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #666;
+}
+
+#gnb i {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  font-size: 25px;
+  color: #eee;
+}
+
+#gnb i:hover + span {
+  opacity: 1;
+}
+
+#gnb span {
+  position: absolute;
+  top: 50%;
+  left: 32px;
+  height: 18px;
+  line-height: 16px;
+  padding: 0 8px;
+  background: #fff;
+  border: 1px solid #555;
+  font-family: "noto-sans-scott-r";
+  font-size: 13px;
+  color: #555;
+  opacity: 0;
+  -webkit-transition: opacity .2s linear;
+  transition: opacity .2s linear;
+}
+
+#main {
+  width: 100%;
+  min-height: calc(100vh - 30px);
+  overflow: hidden;
+}
+
+#main h2 {
+  margin-bottom: 50px;
+  font-family: "noto-sans-scott-b";
+  font-size: 50px;
+}
+
+#codeTag {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 64px;
+  height: 64px;
+  background: url(../images/tag.png) no-repeat center;
+  overflow: hidden;
+}
+
+#codeTag a {
+  position: absolute;
+  top: 0;
+  left: 10px;
+  width: 30px;
+  height: 80px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.home_wrap, .login_wrap {
+  display: table;
+}
+
+.home_wrap > div, .login_wrap > div {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+
+/* index */
+.home_wrap {
+  position: relative;
+}
+
+.home_wrap:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.home_wrap h2 {
+  font-family: "Shadows Into Light Two", cursive !important;
+  font-weight: bold;
+  font-size: 48px;
+  letter-spacing: 5px;
+}
+
+/* login */
+#loginForm {
+  width: 280px;
+  margin: 0 auto;
+}
+
+#loginForm li {
+  margin-top: 20px;
+}
+
+#loginForm li:first-child {
+  margin: 0;
+}
+
+#loginForm li.btn {
+  position: relative;
+  margin-top: 45px;
+}
+
+#loginForm li.btn:before {
+  content: '';
+  position: absolute;
+  top: -40px;
+  height: 0;
+  line-height: 1.5em;
+  font-size: 14px;
+  color: #ff0000;
+  overflow: hidden;
+  -webkit-transition: height .3s;
+  transition: height .3s;
+}
+
+#loginForm input {
+  border: 1px solid #666;
+  padding: 0 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100%;
+  height: 38px;
+}
+
+#loginForm button {
+  width: 100%;
+  height: 50px;
+  border: none;
+  background: #555;
+  font-size: 18px;
+  color: #fff;
+}
+
+#loginForm.err li.btn:before {
+  content: '잘못된 이메일 또는 비밀번호입니다.';
+  height: 1.5em;
+}
+
+#loginForm.err input {
+  border-color: #ff0000;
+}
+
+/*
+---------------------------------------------------------------
+*
+* layout
+*
+---------------------------------------------------------------
+*/
+/*# sourceMappingURL=layout.css.map */

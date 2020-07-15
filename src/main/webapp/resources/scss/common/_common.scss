@@ -1,0 +1,232 @@
+/*
+---------------------------------------------------------------
+*
+* common
+*
+---------------------------------------------------------------
+*/
+
+@font-face {
+	font-family: "noto-sans-scott-t";
+	src: url("../fonts/NotoSansCJKkr-Thin.woff2") format("woff2"),
+		url("../fonts/NotoSansCJKkr-Thin.woff") format("woff"),
+		url("../fonts/NotoSansCJKkr-Thin.otf") format("truetype");
+}
+
+@font-face {
+	font-family: "noto-sans-scott-l";
+	src: url("../fonts/NotoSansCJKkr-Light.woff2") format("woff2"),
+		url("../fonts/NotoSansCJKkr-Light.woff") format("woff"),
+		url("../fonts/NotoSansCJKkr-Light.otf") format("truetype");
+}
+
+@font-face {
+	font-family: "noto-sans-scott-dl";
+	src: url("../fonts/NotoSansCJKkr-DemiLight.woff2") format("woff2"),
+		url("../fonts/NotoSansCJKkr-DemiLight.woff") format("woff"),
+		url("../fonts/NotoSansCJKkr-DemiLight.otf") format("truetype");
+}
+
+@font-face {
+	font-family: "noto-sans-scott-r";
+	src: url("../fonts/NotoSansCJKkr-Regular.woff2") format("woff2"),
+		url("../fonts/NotoSansCJKkr-Regular.woff") format("woff"),
+		url("../fonts/NotoSansCJKkr-Regular.otf") format("truetype");
+}
+
+@font-face {
+	font-family: "noto-sans-scott-m";
+	src: url("../fonts/NotoSansCJKkr-Medium.woff2") format("woff2"),
+		url("../fonts/NotoSansCJKkr-Medium.woff") format("woff"),
+		url("../fonts/NotoSansCJKkr-Medium.otf") format("truetype");
+}
+
+@font-face {
+	font-family: "noto-sans-scott-b";
+	src: url("../fonts/NotoSansCJKkr-Bold.woff2") format("woff2"),
+		url("../fonts/NotoSansCJKkr-Bold.woff") format("woff"),
+		url("../fonts/NotoSansCJKkr-Bold.otf") format("truetype");
+}
+
+@font-face {
+	font-family: "noto-sans-scott-bk";
+	src: url("../fonts/NotoSansCJKkr-Black.woff2") format("woff2"),
+		url("../fonts/NotoSansCJKkr-Black.woff") format("woff"),
+		url("../fonts/NotoSansCJKkr-Black.otf") format("truetype");
+}
+
+@font-face {
+	font-family: "GothamM";
+	src: url("../fonts/GothamMedium.woff2") format("woff2"),
+		url("../fonts/GothamMedium.woff") format("woff"),
+		url("../fonts/GothamMedium.otf") format("truetype");
+}
+
+@font-face {
+	font-family: "GothamB";
+	src: url("../fonts/GothamBold.woff2") format("woff2"),
+		url("../fonts/GothamBold.woff") format("woff"),
+		url("../fonts/GothamBold.otf") format("truetype");
+}
+
+$t: "noto-sans-scott-t";
+$l: "noto-sans-scott-l";
+$dl: "noto-sans-scott-dl";
+$r: "noto-sans-scott-r";
+$m: "noto-sans-scott-m";
+$b: "noto-sans-scott-b";
+$bk: "noto-sans-scott-bk";
+
+$festa: #1edeb9;
+
+@mixin clear {
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+}
+@mixin mask {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+@mixin txt1() {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+@mixin txt2($h, $t) {
+	max-height: $h*$t;
+	line-height: $h;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: normal;
+	display: -webkit-box;
+	-webkit-line-clamp: $t;
+	-webkit-box-orient: vertical;
+}
+@mixin imgTrim() {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	max-width: none;
+}
+
+body {
+	background: #fff;
+	font: {
+		family: $dl;
+	}
+	color: #222;
+}
+a {
+	color: #222;
+}
+th, b, strong {
+	font-family: $m;
+}
+
+button, input, select {
+	font-family: $dl;
+	font-size: 15px;
+	border: 1px solid #666;
+	background: none;
+}
+
+::selection {
+	background: $festa;
+	color: #fff;
+}
+::-moz-selection {
+	background: $festa;
+	color: #fff;
+}
+::-webkit-input-placeholder {
+	font-size: 15px;
+	color: #bbb;
+}
+::-moz-placeholder {
+	font-size: 15px;
+	color: #bbb;
+}
+:-ms-input-placeholder {
+	font-size: 15px;
+	color: #bbb;
+}
+
+.snd_only {
+	position: absolute !important;
+	top: -9999px;
+	left: -9999px;
+	width: 0;
+	height: 0;
+	overflow: hidden;
+}
+
+/* swiper */
+.swiper-wrapper {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-transition-property: -webkit-transform;
+	transition-property: -webkit-transform;
+	transition-property: transform;
+	transition-property: transform, -webkit-transform;
+	-webkit-box-sizing: content-box;
+	box-sizing: content-box;
+}
+.swiper-slide {
+	-ms-flex-negative: 0;
+	flex-shrink: 0;
+	width: 100%;
+	height: 100%;
+	position: relative;
+	-webkit-transition-property: -webkit-transform;
+	transition-property: -webkit-transform;
+	transition-property: transform;
+	transition-property: transform, -webkit-transform;
+}
+.swiper-button-next.swiper-button-disabled, .swiper-button-prev.swiper-button-disabled {
+    opacity: .3;
+    cursor: auto;
+    pointer-events: none;
+}
+/* swiper */
+
+@media (max-width: 360px) {
+	html {
+		font-size: 13px;
+	}
+}
+
+@media (min-width: 361px) and (max-width: 768px) {
+	html {
+		font-size: 14px;
+	}
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {}
+
+@media (min-width: 769px) {
+	html {
+		font-size: 15px;
+	}
+}
+
+@media (min-width: 1025px) {
+}
+
+@media (min-width: 1201px) {
+	.container {
+		width: 1200px;
+		padding: 0;
+	}
+}

@@ -42,15 +42,13 @@ footer {
 		}
 	}
 }
-header {
+#gnb {
 	position: fixed;
 	top: 0;
 	left: 0;
 	width: 50px;
 	height: 100vh;
 	background: #555;
-}
-#gnb {
 	li {
 		position: relative;
 		margin: 7px;
@@ -88,8 +86,43 @@ header {
 		transition: opacity .2s linear;
 	}
 }
+#userMenu {
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 1;
+	dt {
+		padding: 0 10px;
+		font-family: $m;
+		font-size: 15px;
+		background: #eee;
+		overflow: hidden;
+	}
+	#btnUser {
+		float: left;
+		margin-right: 10px;
+		border: none;
+		font-size: 16px;
+		color: #555;
+	}
+	dd {
+		height: 22px;
+		line-height: 20px;
+		padding: 0 8px;
+		background: #fff;
+		border: 1px solid #555;
+		border-bottom: none;
+		font-family: $r;
+		font-size: 13px;
+		color: #555;
+		&:last-child {
+			border-bottom: 1px solid #555;
+		}
+	}
+}
 
 #main {
+	position: relative;
 	width: 100%;
 	min-height: calc(100vh - 30px);
 	overflow: hidden;
@@ -102,21 +135,18 @@ header {
 
 #codeTag {
 	position: absolute;
-	top: 0;
-	right: 0;
-	width: 64px;
-	height: 64px;
+	top: -8px;
+	right: -30px;
+	width: 84px;
+	height: 50px;
 	background: url(../images/tag.png) no-repeat center;
+	background-size: 100%;
 	overflow: hidden;
+	transform: rotate(-45deg);
 	a {
-		position: absolute;
-		top: 0;
-		left: 10px;
-		width: 30px;
-		height: 80px;
-		transform: rotate(45deg);
-		// box-sizing: border-box;
-		// border: 1px solid red;
+		display: block;
+		width: inherit;
+		height: inherit;
 	}
 }
 
@@ -131,11 +161,6 @@ header {
 
 /* index */
 .home_wrap {
-	position: relative;
-	&:before {
-		content: '';
-		@include mask;
-	}
 	h2 {
 		font-family: $shadow !important;
 		font-weight: bold;

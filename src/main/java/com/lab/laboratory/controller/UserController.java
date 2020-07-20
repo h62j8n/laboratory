@@ -12,35 +12,39 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.lab.laboratory.model.entity.LoginVo;
 import com.lab.laboratory.model.entity.ProfileVo;
-import com.lab.laboratory.service.MemberService;
+import com.lab.laboratory.service.UserService;
 
 @Controller
-@RequestMapping("/member/")
-public class MemberController {
+@RequestMapping("/user/")
+public class UserController {
 	@Autowired
-	MemberService memberService;
+	UserService userService;
 	
-	// 로그인 페이지
+	// 로그인 뷰
 	@RequestMapping(value = "login", method = RequestMethod.GET)
 	public String login() {
-		return "member/login";
+		return "user/login";
 	}
 	
 	// 로그인 처리
 	@RequestMapping(value = "login", method = RequestMethod.POST)
 	public @ResponseBody ProfileVo login(HttpServletRequest req, HttpServletResponse resp, LoginVo login) {
-		ProfileVo user = memberService.login(req, resp, login);
+		ProfileVo user = userService.login(req, resp, login);
 		
 		return user;
 	}
 	
-	// 로그아웃
-	/*
-	@RequestMapping(value = "logout", method = RequestMethod.POST)
-	public String logout(HttpServletRequest req,HttpServletResponse resp) {
-		memberService.logout(req,resp);
+	// 로그아웃 뷰
+	@RequestMapping(value = "layer/logout", method = RequestMethod.GET)
+	public String logout() {
+		return "user/layer/logout";
+	}
+	
+	// 로그아웃 처리
+	@RequestMapping(value = "layer/logout", method = RequestMethod.POST)
+	public String logout(HttpServletRequest req, HttpServletResponse resp) {
+		userService.logout(req, resp);
 		
 		return "index";
 	}
-	*/
 }

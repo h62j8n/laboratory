@@ -7,6 +7,6 @@
 		<typeAlias alias="LoginVo" type="com.lab.laboratory.model.entity.LoginVo" />
 	</typeAliases>
 	<mappers>
-		<mapper resource="mybatis/memberMapper.xml"/>
+		<mapper resource="mybatis/userMapper.xml"/>
 	</mappers>
 </configuration>

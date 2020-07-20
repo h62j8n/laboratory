@@ -89,18 +89,22 @@ footer {
 #userMenu {
 	position: absolute;
 	top: 0;
-	right: 0;
+	right: 50px;
 	z-index: 1;
 	dt {
+		height: 24px;
+		line-height: 24px;
 		padding: 0 10px;
 		font-family: $m;
-		font-size: 15px;
+		font-size: 14px;
 		background: #eee;
 		overflow: hidden;
 	}
 	#btnUser {
-		float: left;
-		margin-right: 10px;
+		float: right;
+		height: inherit;
+		line-height: inherit;
+		margin-left: 10px;
 		border: none;
 		font-size: 16px;
 		color: #555;
@@ -121,7 +125,7 @@ footer {
 	}
 }
 
-#main {
+#container {
 	position: relative;
 	width: 100%;
 	min-height: calc(100vh - 30px);
@@ -159,6 +163,63 @@ footer {
 	}
 }
 
+/* layer-popup */
+.pop_wrap {
+	width: 300px;
+	margin-left: 50px;
+	border-radius: 10px;
+	background: #fff;
+	overflow: hidden;
+	button {
+		border: none;
+		border-top: 1px solid #ddd;
+		width: 100%;
+		height: 50px;
+		&:hover {
+			background: #eee;
+		}
+	}
+	.txt_mid {
+		text-align: center;
+	}
+	.box_inform {
+		padding: 30px;
+		word-break: keep-all;
+		h3 {
+			margin-bottom: 20px;
+			text-align: center;
+			font-family: $r;
+			font-size: 18px;
+		}
+		p {
+			margin-bottom: 5px;
+			font-size: 16px;
+			&:last-child {
+				margin: 0;
+			}
+		}
+	}
+	.confirm_form {
+		ul {
+			position: relative;
+			overflow: hidden;
+			&:before {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 50%;
+				width: 1px;
+				height: 100%;
+				background: #ddd;
+			}
+		}
+		li {
+			float: left;
+			width: 50%;
+		}
+	}
+}
+
 /* index */
 .home_wrap {
 	h2 {
@@ -170,17 +231,26 @@ footer {
 }
 
 /* login */
-.login_wrap {}
-#loginForm {
-	width: 280px;
+.login_wrap {
+	.options {
+		display: table;
+		margin: 15px auto 0;
+		li {
+			display: table-cell;
+			padding: 0 7px;
+		}
+	}
+}
+.comm_form {
+	width: 300px;
 	margin: 0 auto;
 	li {
-		margin-top: 20px;
+		position: relative;
+		margin-top: 30px;
 		&:first-child {
-			margin: 0;
+			margin: 0 !important;
 		}
 		&.btn {
-			position: relative;
 			margin-top: 45px;
 			&:before {
 				content: '';
@@ -195,12 +265,82 @@ footer {
 			}
 		}
 	}
-	input {
+	&#loginForm {
+		li {
+			margin-top: 20px;
+		}
+	}
+	input[type=text], input[type=email], input[type=password] {
+		position: relative;
 		border: 1px solid #666;
 		padding: 0 10px;
 		box-sizing: border-box;
 		width: 100%;
 		height: 38px;
+		z-index: 1;
+	}
+	input[type=checkbox] {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 0;
+		height: 0;
+		overflow: hidden;
+	}
+	label {
+		position: absolute;
+		top: 50%;
+		left: 10px;
+		font-size: 14px;
+		color: #666;
+		transform: translateY(-50%);
+		transition: left .2s;
+		z-index: 0;
+		span {
+			font-size: 13px;
+		}
+	}
+	.label_chk {
+		position: relative;
+		display: block;
+		width: 100%;
+		padding-left: 25px;
+		box-sizing: border-box;
+		text-align: left;
+		left: 0;
+		&:before, &:after {
+			content: '';
+			position: absolute;
+			left: 0;
+		}
+		&:before {
+			width: 18px;
+			height: 18px;
+			border: 1px solid #666;
+			box-sizing: border-box;
+			top: 50%;
+			transform: translateY(-50%);
+			z-index: 1;
+		}
+		&:after {
+			width: 15px;
+			height: 10px;
+			top: 3px;
+			left: 2px;
+			border-left: 3px solid $festa;
+			border-bottom: 3px solid $festa;
+			box-sizing: border-box;
+			transform: rotate(-45deg);
+			z-index: 0;
+		}
+	}
+	label.off, input:focus + label {
+		width: 100px;
+		left: -110px;
+		text-align: right;
+		span {
+			display: none;
+		}
 	}
 	button {
 		width: 100%;
@@ -219,4 +359,7 @@ footer {
 			border-color: #ff0000;
 		}
 	}
+}
+#loginForm {
+
 }

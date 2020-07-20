@@ -70,7 +70,7 @@ public class ProfileVo {
 
 	@Override
 	public String toString() {
-		return "MemberVo [profileList=" + profileList + ", mbnum=" + mbnum + ", mbid=" + mbid + ", mbpw=" + mbpw
+		return "ProfileVo [profileList=" + profileList + ", mbnum=" + mbnum + ", mbid=" + mbid + ", mbpw=" + mbpw
 				+ ", mbname=" + mbname + ", mbdate=" + mbdate + ", login=" + login + "]";
 	}
 }

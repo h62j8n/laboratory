@@ -6,6 +6,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.ui.Model;
 
 import com.lab.laboratory.model.UserDaoImpl;
 import com.lab.laboratory.model.entity.LoginVo;
@@ -16,28 +17,36 @@ public class UserServiceImpl implements UserService {
 	@Autowired
 	UserDaoImpl userDao;
 	
+	/* ================================================================================
+	 * 로그인
+	 * ================================================================================ */
 	@Override
-	public ProfileVo login(HttpServletRequest req, HttpServletResponse resp, LoginVo login) {
+	public ProfileVo login(HttpServletRequest request, HttpServletResponse response, LoginVo login) {
 		ProfileVo user = new ProfileVo();
-		System.out.println(user.getLogin());
 		user = userDao.login(login);
 		if (user.getLogin() != 0) {
-			HttpSession session = req.getSession();
+			HttpSession session = request.getSession();
 			session.setAttribute("login", user);
-			System.out.println(session.getAttribute("login"));
 		}
 		return user;
 	}
-	
+
+	/* ================================================================================
+	 * 로그아웃
+	 * ================================================================================ */
 	@Override
-	public void logout(HttpServletRequest req, HttpServletResponse resp) {
-		HttpSession session = req.getSession();
+	public void logout(HttpServletRequest request, HttpServletResponse response) {
+		HttpSession session = request.getSession();
 		session.invalidate();
-//		Cookie[] userCookies = req.getCookies();
-//	    for(int i=0; i<userCookies.length; i++) {
-//	         userCookies[i].setMaxAge(0);
-//	         userCookies[i].setPath("/");
-//	         resp.addCookie(userCookies[i]);
-//	    }
+	}
+	
+	/* ================================================================================
+	 * 회원가입
+	 * ================================================================================ */
+	@Override
+	public void joinNormal(Model model, ProfileVo join) {
+		//userDao.joinNormal(join);
+		model.addAttribute("join", join);
+		System.out.println(join);
 	}
 }

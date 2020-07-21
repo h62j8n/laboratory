@@ -7,6 +7,7 @@
 		<!-- <h1><a href=""><img src="../images/logo.png" alt="ê°ë°ì ì¡°íì§"></a></h1> -->
 		<nav id="gnb">
 			<ul>
+				<li><a href="${root}"><i class="xi-home"></i><span>Home</span></a></li>
 				<li><a href="${root}user/login"><i class="xi-user"></i><span>Login</span></a></li>
 			</ul>
 		</nav>

@@ -55,20 +55,6 @@
 		url("../fonts/NotoSansCJKkr-Black.otf") format("truetype");
 }
 
-@font-face {
-	font-family: "GothamM";
-	src: url("../fonts/GothamMedium.woff2") format("woff2"),
-		url("../fonts/GothamMedium.woff") format("woff"),
-		url("../fonts/GothamMedium.otf") format("truetype");
-}
-
-@font-face {
-	font-family: "GothamB";
-	src: url("../fonts/GothamBold.woff2") format("woff2"),
-		url("../fonts/GothamBold.woff") format("woff"),
-		url("../fonts/GothamBold.otf") format("truetype");
-}
-
 $t: "noto-sans-scott-t";
 $l: "noto-sans-scott-l";
 $dl: "noto-sans-scott-dl";

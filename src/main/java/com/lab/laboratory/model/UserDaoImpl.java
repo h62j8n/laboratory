@@ -17,4 +17,10 @@ public class UserDaoImpl implements UserDao {
 	public ProfileVo login(LoginVo login) {
 		return sqlSession.selectOne("user.login", login);
 	}
+	
+	// 회원가입-일반
+	@Override
+	public void joinNormal(ProfileVo join) {
+		sqlSession.insert("user.joinNormal", join);
+	}
 }
